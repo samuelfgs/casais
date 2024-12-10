@@ -381,12 +381,13 @@ function PlasmicInscricao__RenderFunc(props: {
                   </div>
                 </FormItem>
               </Stack__>
-              <Separator
-                data-plasmic-name={"separator"}
-                data-plasmic-override={overrides.separator}
-                className={classNames("__wab_instance", sty.separator)}
-              />
-
+              <div className={classNames(projectcss.all, sty.freeBox___8PHs)}>
+                <Separator
+                  data-plasmic-name={"separator"}
+                  data-plasmic-override={overrides.separator}
+                  className={classNames("__wab_instance", sty.separator)}
+                />
+              </div>
               <Stack__
                 as={"div"}
                 hasGap={true}
