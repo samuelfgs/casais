@@ -60,8 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Button from "../../Button"; // plasmic-import: MkhwwcjTHS98/component
-
-import { useScreenVariants as useScreenVariantswbSvjcbuSqcK } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WbSvjcbuSqcK/globalVariant
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -84,6 +83,7 @@ export const PlasmicDesktop6__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicDesktop6__OverridesType = {
   root?: Flex__<"div">;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultDesktop6Props {
@@ -128,8 +128,22 @@ function PlasmicDesktop6__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantswbSvjcbuSqcK()
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "selectedImage",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
   });
 
   return (
@@ -168,17 +182,6 @@ function PlasmicDesktop6__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__lh6Q4)}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__uiIvR
-            )}
-          >
-            {
-              "Nosso retiro ser\u00e1 realizado no Hotel Monte Real, em \u00c1guas de Lind\u00f3ia / S\u00e3o Paulo. \nO hotel se destaca n\u00e3o apenas por sua rica hist\u00f3ria, mas tamb\u00e9m por sua localiza\u00e7\u00e3o privilegiada, situado na jun\u00e7\u00e3o das avenidas Borges de Medeiros e das Hort\u00eansias. Isso proporciona aos participantes do Retiro f\u00e1cil acesso ao cora\u00e7\u00e3o da cidade, a poucos passos das principais atra\u00e7\u00f5es de Gramado, tornando-o um local ideal para aproveitar ao m\u00e1ximo tanto a cidade quanto o Retiro."
-            }
-          </div>
           <Stack__
             as={"div"}
             hasGap={true}
@@ -255,13 +258,26 @@ function PlasmicDesktop6__RenderFunc(props: {
             displayMinHeight={"0"}
             displayMinWidth={"0"}
             displayWidth={"100%"}
+            height={"200px"}
             loading={"lazy"}
-            src={{
-              src: "/plasmic/casais/images/hotel1.jpg",
-              fullWidth: 522,
-              fullHeight: 348,
-              aspectRatio: undefined
-            }}
+            src={(() => {
+              try {
+                return `https://casais.vercel.app/plasmic/casais/images/hotel${$state.selectedImage}.jpg`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return {
+                    src: "/plasmic/casais/images/hotel1.jpg",
+                    fullWidth: 522,
+                    fullHeight: 348,
+                    aspectRatio: undefined
+                  };
+                }
+                throw e;
+              }
+            })()}
           />
 
           <Stack__
@@ -290,6 +306,45 @@ function PlasmicDesktop6__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox__qaZcx)}
                   key={currentIndex}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateSelectedImage"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["selectedImage"]
+                            },
+                            operation: 0,
+                            value: currentItem
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateSelectedImage"] != null &&
+                      typeof $steps["updateSelectedImage"] === "object" &&
+                      typeof $steps["updateSelectedImage"].then === "function"
+                    ) {
+                      $steps["updateSelectedImage"] = await $steps[
+                        "updateSelectedImage"
+                      ];
+                    }
+                  }}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -301,31 +356,88 @@ function PlasmicDesktop6__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"100%"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/casais/images/hotel2.jpg",
-                      fullWidth: 522,
-                      fullHeight: 348,
-                      aspectRatio: undefined
-                    }}
+                    src={(() => {
+                      try {
+                        return `https://casais.vercel.app/plasmic/casais/images/hotel${currentItem}.jpg`;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return {
+                            src: "/plasmic/casais/images/hotel2.jpg",
+                            fullWidth: 522,
+                            fullHeight: 348,
+                            aspectRatio: undefined
+                          };
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 </div>
               );
             })}
           </Stack__>
         </Stack__>
+        <SideEffect
+          data-plasmic-name={"sideEffect"}
+          data-plasmic-override={overrides.sideEffect}
+          className={classNames("__wab_instance", sty.sideEffect)}
+          onMount={async () => {
+            const $steps = {};
+
+            $steps["updateSelectedImage"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: {
+                      objRoot: $state,
+                      variablePath: ["selectedImage"]
+                    },
+                    operation: 0,
+                    value: (() => {
+                      return setInterval(() => {
+                        $state.selectedImage = 1 + ($state.selectedImage % 5);
+                      }, 2500);
+                    })()
+                  };
+                  return (({ variable, value, startIndex, deleteCount }) => {
+                    if (!variable) {
+                      return;
+                    }
+                    const { objRoot, variablePath } = variable;
+
+                    $stateSet(objRoot, variablePath, value);
+                    return value;
+                  })?.apply(null, [actionArgs]);
+                })()
+              : undefined;
+            if (
+              $steps["updateSelectedImage"] != null &&
+              typeof $steps["updateSelectedImage"] === "object" &&
+              typeof $steps["updateSelectedImage"].then === "function"
+            ) {
+              $steps["updateSelectedImage"] = await $steps[
+                "updateSelectedImage"
+              ];
+            }
+          }}
+        />
       </Stack__>
     </Stack__>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "sideEffect"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -388,6 +500,7 @@ export const PlasmicDesktop6 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicDesktop6
     internalVariantProps: PlasmicDesktop6__VariantProps,

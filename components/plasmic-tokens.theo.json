@@ -11,6 +11,16 @@
       }
     },
     {
+      "name": "bg2",
+      "type": "color",
+      "value": "#FFF8F3",
+      "category": "color",
+      "meta": {
+        "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+        "id": "d1wM30iB6qjM"
+      }
+    },
+    {
       "name": "foreground",
       "type": "color",
       "value": "#8C3F1C",

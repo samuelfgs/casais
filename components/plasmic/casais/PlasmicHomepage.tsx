@@ -61,9 +61,9 @@ import {
 
 import Mobile1 from "../../Mobile1"; // plasmic-import: V5wBCgG6NMHK/component
 import Mobile2 from "../../Mobile2"; // plasmic-import: Ya1Lo3itYxCg/component
-import Desktop6 from "../../Desktop6"; // plasmic-import: GuyG08-Cxz2f/component
 import Desktop1 from "../../Desktop1"; // plasmic-import: cAXqSs1VbbDV/component
 import Desktop2 from "../../Desktop2"; // plasmic-import: 9FFQvMvxZbIZ/component
+import Desktop6 from "../../Desktop6"; // plasmic-import: GuyG08-Cxz2f/component
 import Desktop3 from "../../Desktop3"; // plasmic-import: 12wSeGIcfcjG/component
 import Desktop5 from "../../Desktop5"; // plasmic-import: MSMlbw5YAR6C/component
 
@@ -89,9 +89,9 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   mobile1?: Flex__<typeof Mobile1>;
   mobile2?: Flex__<typeof Mobile2>;
-  desktop6?: Flex__<typeof Desktop6>;
   desktop1?: Flex__<typeof Desktop1>;
   desktop2?: Flex__<typeof Desktop2>;
+  desktop6?: Flex__<typeof Desktop6>;
   desktop3?: Flex__<typeof Desktop3>;
   desktop5?: Flex__<typeof Desktop5>;
 };
@@ -177,12 +177,6 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.mobile2)}
           />
 
-          <Desktop6
-            data-plasmic-name={"desktop6"}
-            data-plasmic-override={overrides.desktop6}
-            className={classNames("__wab_instance", sty.desktop6)}
-          />
-
           <Desktop1
             data-plasmic-name={"desktop1"}
             data-plasmic-override={overrides.desktop1}
@@ -193,6 +187,12 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"desktop2"}
             data-plasmic-override={overrides.desktop2}
             className={classNames("__wab_instance", sty.desktop2)}
+          />
+
+          <Desktop6
+            data-plasmic-name={"desktop6"}
+            data-plasmic-override={overrides.desktop6}
+            className={classNames("__wab_instance", sty.desktop6)}
           />
 
           <Desktop3
@@ -217,17 +217,17 @@ const PlasmicDescendants = {
     "root",
     "mobile1",
     "mobile2",
-    "desktop6",
     "desktop1",
     "desktop2",
+    "desktop6",
     "desktop3",
     "desktop5"
   ],
   mobile1: ["mobile1"],
   mobile2: ["mobile2"],
-  desktop6: ["desktop6"],
   desktop1: ["desktop1"],
   desktop2: ["desktop2"],
+  desktop6: ["desktop6"],
   desktop3: ["desktop3"],
   desktop5: ["desktop5"]
 } as const;
@@ -238,9 +238,9 @@ type NodeDefaultElementType = {
   root: "div";
   mobile1: typeof Mobile1;
   mobile2: typeof Mobile2;
-  desktop6: typeof Desktop6;
   desktop1: typeof Desktop1;
   desktop2: typeof Desktop2;
+  desktop6: typeof Desktop6;
   desktop3: typeof Desktop3;
   desktop5: typeof Desktop5;
 };
@@ -307,9 +307,9 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     mobile1: makeNodeComponent("mobile1"),
     mobile2: makeNodeComponent("mobile2"),
-    desktop6: makeNodeComponent("desktop6"),
     desktop1: makeNodeComponent("desktop1"),
     desktop2: makeNodeComponent("desktop2"),
+    desktop6: makeNodeComponent("desktop6"),
     desktop3: makeNodeComponent("desktop3"),
     desktop5: makeNodeComponent("desktop5"),
 

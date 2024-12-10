@@ -88,19 +88,6 @@
   > img {
   margin-top: 30px;
 }
-.text__uiIvR {
-  position: relative;
-  width: 642px;
-  height: auto;
-  max-width: 100%;
-  font-size: 20px;
-  text-align: justify;
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .text__uiIvR {
-    display: none;
-  }
-}
 .freeBox__p9Vh1 {
   display: flex;
   flex-direction: column;
@@ -139,6 +126,7 @@
   padding-left: 25px;
   padding-right: 25px;
   font-size: 20px;
+  text-align: center;
   min-width: 0;
 }
 .button__xce2L:global(.__wab_instance) {
@@ -264,5 +252,9 @@
   min-width: 0;
 }
 .img__btp6X > picture > img {
+  object-fit: cover;
+}
+.sideEffect:global(.__wab_instance) {
+  max-width: 100%;
   object-fit: cover;
 }

@@ -11,6 +11,8 @@
   --plasmic-token-secondary: var(--token-TITcbhsaon91);
   --token-jZN1rKJ889wP: #46a758;
   --plasmic-token-grass-9: var(--token-jZN1rKJ889wP);
+  --token-d1wM30iB6qjM: #fff8f3;
+  --plasmic-token-bg-2: var(--token-d1wM30iB6qjM);
 }
 
 .plasmic_tokens {

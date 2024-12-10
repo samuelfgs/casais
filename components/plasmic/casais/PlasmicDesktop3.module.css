@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  background: #fff8f3;
+  background: var(--token-d1wM30iB6qjM);
   padding-top: 42px;
   padding-bottom: 60px;
   min-width: 0;
@@ -242,6 +242,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  cursor: pointer;
   min-width: 0;
   padding: 0px;
   border: 2px solid #ffffff;

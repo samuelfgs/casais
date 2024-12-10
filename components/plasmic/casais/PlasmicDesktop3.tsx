@@ -256,10 +256,11 @@ function PlasmicDesktop3__RenderFunc(props: {
             displayMinHeight={"0"}
             displayMinWidth={"0"}
             displayWidth={"100%"}
+            height={"400px"}
             loading={"lazy"}
             src={(() => {
               try {
-                return "images/hotel1.jpg";
+                return `https://casais.vercel.app/plasmic/casais/images/hotel${$state.selectedImage}.jpg`;
               } catch (e) {
                 if (
                   e instanceof TypeError ||
@@ -298,6 +299,45 @@ function PlasmicDesktop3__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox___7VsEi)}
                   key={currentIndex}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateSelectedImage"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["selectedImage"]
+                            },
+                            operation: 0,
+                            value: currentItem
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateSelectedImage"] != null &&
+                      typeof $steps["updateSelectedImage"] === "object" &&
+                      typeof $steps["updateSelectedImage"].then === "function"
+                    ) {
+                      $steps["updateSelectedImage"] = await $steps[
+                        "updateSelectedImage"
+                      ];
+                    }
+                  }}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -309,12 +349,24 @@ function PlasmicDesktop3__RenderFunc(props: {
                     displayMinWidth={"0"}
                     displayWidth={"100%"}
                     loading={"lazy"}
-                    src={{
-                      src: "/plasmic/casais/images/hotel2.jpg",
-                      fullWidth: 522,
-                      fullHeight: 348,
-                      aspectRatio: undefined
-                    }}
+                    src={(() => {
+                      try {
+                        return `https://casais.vercel.app/plasmic/casais/images/hotel${currentItem}.jpg`;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return {
+                            src: "/plasmic/casais/images/hotel2.jpg",
+                            fullWidth: 522,
+                            fullHeight: 348,
+                            aspectRatio: undefined
+                          };
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 </div>
               );
