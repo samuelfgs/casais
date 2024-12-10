@@ -31,7 +31,6 @@ function Homepage() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <h1>HELLO</h1>
         <PlasmicHomepage />
       </PageParamsProvider__>
     </GlobalContextsProvider>

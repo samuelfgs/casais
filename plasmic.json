@@ -249,6 +249,19 @@
           "cssFilePath": "plasmic/casais/PlasmicDesktop6.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "KxCAyuU4Ni_B",
+          "name": "MobilePreletores",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicMobilePreletores.tsx",
+          "importSpec": {
+            "modulePath": "MobilePreletores.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicMobilePreletores.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -343,6 +356,11 @@
           "id": "xHjHwWycEN8a",
           "name": "hotel5",
           "filePath": "../public/plasmic/casais/images/hotel5.jpg"
+        },
+        {
+          "id": "BQEOhjYA_yoA",
+          "name": "jan.png",
+          "filePath": "../public/plasmic/casais/images/janPng.png"
         }
       ],
       "indirect": false,
