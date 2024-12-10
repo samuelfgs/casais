@@ -1,0 +1,383 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "8PtdGodUbexNYgkuyBUcWu",
+      "projectApiToken": "34o5R5KswluuZ4sD83F88oQrcLWsNNeUpCptQ8Okf4hYqgjnHnX2idGAlhtB7WWQQelNAInf5XFazR1cGw",
+      "projectName": "plasmic-embed-css",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_embed_css/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/plasmic_embed_css/PlasmicGlobalContextsProvider.tsx",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "qF0uJxFztB",
+          "name": "EmbedCss",
+          "displayName": "global-embed-css",
+          "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+      "projectApiToken": "40nkYFdai2kUCGwNPUGy1HeJqLP8aA9Yg1sJ3r3wZMK23peUmoXDOZLrOh1e9Yljk6pvFKvS9hpcqvPznhw",
+      "projectName": "Casais",
+      "version": "latest",
+      "cssFilePath": "plasmic/casais/plasmic.module.css",
+      "components": [
+        {
+          "id": "CQD8Pxr96jbL",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        },
+        {
+          "id": "cAXqSs1VbbDV",
+          "name": "Desktop1",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicDesktop1.tsx",
+          "importSpec": {
+            "modulePath": "Desktop1.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicDesktop1.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "9FFQvMvxZbIZ",
+          "name": "Desktop2",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicDesktop2.tsx",
+          "importSpec": {
+            "modulePath": "Desktop2.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicDesktop2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "MkhwwcjTHS98",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "12wSeGIcfcjG",
+          "name": "Desktop3",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicDesktop3.tsx",
+          "importSpec": {
+            "modulePath": "Desktop3.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicDesktop3.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "V5wBCgG6NMHK",
+          "name": "Mobile1",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicMobile1.tsx",
+          "importSpec": {
+            "modulePath": "Mobile1.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicMobile1.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Ya1Lo3itYxCg",
+          "name": "Mobile2",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicMobile2.tsx",
+          "importSpec": {
+            "modulePath": "Mobile2.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicMobile2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "WSo1encmaQLR",
+          "name": "Desktop4",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicDesktop4.tsx",
+          "importSpec": {
+            "modulePath": "Desktop4.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicDesktop4.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Sg4ECxtshw6E",
+          "name": "Inscricao",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicInscricao.tsx",
+          "importSpec": {
+            "modulePath": "../pages/inscricao.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicInscricao.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/inscricao"
+        },
+        {
+          "id": "LvzZwu2COXKn",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "D_-29DFy6get",
+          "name": "FormItem",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicFormItem.tsx",
+          "importSpec": {
+            "modulePath": "FormItem.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicFormItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "fpGcqQ82peL5",
+          "name": "Separator",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicSeparator.tsx",
+          "importSpec": {
+            "modulePath": "Separator.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicSeparator.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "MSMlbw5YAR6C",
+          "name": "Desktop5",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicDesktop5.tsx",
+          "importSpec": {
+            "modulePath": "Desktop5.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicDesktop5.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "AuAxc9cZuA_4",
+          "name": "Mobile3",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicMobile3.tsx",
+          "importSpec": {
+            "modulePath": "Mobile3.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicMobile3.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "GuyG08-Cxz2f",
+          "name": "Desktop6",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicDesktop6.tsx",
+          "importSpec": {
+            "modulePath": "Desktop6.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicDesktop6.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        }
+      ],
+      "icons": [
+        {
+          "id": "TE_sY4vbhrOu",
+          "name": "FolhaIcon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__Folha.tsx"
+        },
+        {
+          "id": "0-6OlSUyBVv6",
+          "name": "CheckSvgIcon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__CheckSvg.tsx"
+        },
+        {
+          "id": "h_0_6QYFY5gx",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "Xm67rv5XIDfl",
+          "name": "Folha2Icon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__Folha2.tsx"
+        },
+        {
+          "id": "YW6sjaLFknpv",
+          "name": "MarkerIcon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__Marker.tsx"
+        },
+        {
+          "id": "7It9WrAHne4M",
+          "name": "SearchSvgIcon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__SearchSvg.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "FZXOfFi40K58",
+          "name": "logo",
+          "filePath": "../public/plasmic/casais/images/logo.jpg"
+        },
+        {
+          "id": "NzqBkp_716yj",
+          "name": "fundo maos",
+          "filePath": "../public/plasmic/casais/images/fundoMaos.jpg"
+        },
+        {
+          "id": "uFr13WwqSqEi",
+          "name": "daniel",
+          "filePath": "../public/plasmic/casais/images/daniel.png"
+        },
+        {
+          "id": "PYVfG3PpEE_o",
+          "name": "logo 2",
+          "filePath": "../public/plasmic/casais/images/logo2.png"
+        },
+        {
+          "id": "NAg8Sv-LITss",
+          "name": "logo 3",
+          "filePath": "../public/plasmic/casais/images/logo3.png"
+        },
+        {
+          "id": "1tfEgx-ad-PI",
+          "name": "hotel2",
+          "filePath": "../public/plasmic/casais/images/hotel2.jpg"
+        },
+        {
+          "id": "ABbvbXN2ogfg",
+          "name": "hotel3",
+          "filePath": "../public/plasmic/casais/images/hotel3.jpg"
+        },
+        {
+          "id": "XJF1nN0eE_6p",
+          "name": "hotel1",
+          "filePath": "../public/plasmic/casais/images/hotel1.jpg"
+        },
+        {
+          "id": "O_pka7cHprRC",
+          "name": "bg",
+          "filePath": "../public/plasmic/casais/images/bg.jpg"
+        },
+        {
+          "id": "6Cn5Fim_gpTZ",
+          "name": "image 6",
+          "filePath": "../public/plasmic/casais/images/image6.png"
+        },
+        {
+          "id": "aAZXFg_mhpTM",
+          "name": "hotel4",
+          "filePath": "../public/plasmic/casais/images/hotel4.jpg"
+        },
+        {
+          "id": "xHjHwWycEN8a",
+          "name": "hotel5",
+          "filePath": "../public/plasmic/casais/images/hotel5.jpg"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "plasmic/casais/PlasmicGlobalContextsProvider.tsx",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "f8r5DEpgap1Z",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "-Og9oe7DjVOa",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "WbSvjcbuSqcK",
+        "name": "Screen",
+        "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+        "contextFilePath": "plasmic/casais/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.334",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.334/dist/plasmic.schema.json"
+}

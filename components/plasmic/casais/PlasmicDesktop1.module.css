@@ -1,0 +1,138 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 0px;
+}
+.freeBox___3QEgs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  top: 0px;
+  left: auto;
+  min-width: 0;
+  min-height: 0;
+}
+.freeBox___76GhU {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background: #efe7dda6;
+  min-width: 0;
+  min-height: 0;
+}
+.img__ypeaO {
+  object-fit: cover;
+  max-width: 100%;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.img__ypeaO > picture > img {
+  object-fit: cover;
+}
+.freeBox__invek {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.freeBox__jvKCo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 8px 8px 8px 75px;
+}
+.freeBox__jvKCo > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  margin-top: calc(0px - 40px);
+  height: calc(100% + 40px);
+}
+.freeBox__jvKCo > :global(.__wab_flex-container) > *,
+.freeBox__jvKCo > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__jvKCo > :global(.__wab_flex-container) > picture > img,
+.freeBox__jvKCo
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 40px;
+}
+.img__w78Ms {
+  object-fit: cover;
+  max-width: 100%;
+  width: 200px;
+}
+.img__w78Ms > picture > img {
+  object-fit: cover;
+}
+.text__feVn5 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  text-align: left;
+  font-size: 150px;
+  font-family: "Dancing Script";
+  color: var(--token-7k42vfoby6t9);
+  line-height: 1;
+}
+.text___4UYVg {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+}
+.text__hWNp {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  font-family: "Catamaran", sans-serif;
+  color: #9b4922;
+  font-size: 30px;
+  text-transform: uppercase;
+}
