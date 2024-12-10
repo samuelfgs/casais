@@ -66,6 +66,7 @@ import Desktop2 from "../../Desktop2"; // plasmic-import: 9FFQvMvxZbIZ/component
 import Desktop6 from "../../Desktop6"; // plasmic-import: GuyG08-Cxz2f/component
 import Desktop3 from "../../Desktop3"; // plasmic-import: 12wSeGIcfcjG/component
 import Desktop5 from "../../Desktop5"; // plasmic-import: MSMlbw5YAR6C/component
+import MobilePreletores from "../../MobilePreletores"; // plasmic-import: KxCAyuU4Ni_B/component
 
 import { useScreenVariants as useScreenVariantswbSvjcbuSqcK } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WbSvjcbuSqcK/globalVariant
 
@@ -94,6 +95,7 @@ export type PlasmicHomepage__OverridesType = {
   desktop6?: Flex__<typeof Desktop6>;
   desktop3?: Flex__<typeof Desktop3>;
   desktop5?: Flex__<typeof Desktop5>;
+  mobilePreletores?: Flex__<typeof MobilePreletores>;
 };
 
 export interface DefaultHomepageProps {}
@@ -206,6 +208,12 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.desktop5}
             className={classNames("__wab_instance", sty.desktop5)}
           />
+
+          <MobilePreletores
+            data-plasmic-name={"mobilePreletores"}
+            data-plasmic-override={overrides.mobilePreletores}
+            className={classNames("__wab_instance", sty.mobilePreletores)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -221,7 +229,8 @@ const PlasmicDescendants = {
     "desktop2",
     "desktop6",
     "desktop3",
-    "desktop5"
+    "desktop5",
+    "mobilePreletores"
   ],
   mobile1: ["mobile1"],
   mobile2: ["mobile2"],
@@ -229,7 +238,8 @@ const PlasmicDescendants = {
   desktop2: ["desktop2"],
   desktop6: ["desktop6"],
   desktop3: ["desktop3"],
-  desktop5: ["desktop5"]
+  desktop5: ["desktop5"],
+  mobilePreletores: ["mobilePreletores"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -243,6 +253,7 @@ type NodeDefaultElementType = {
   desktop6: typeof Desktop6;
   desktop3: typeof Desktop3;
   desktop5: typeof Desktop5;
+  mobilePreletores: typeof MobilePreletores;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -312,6 +323,7 @@ export const PlasmicHomepage = Object.assign(
     desktop6: makeNodeComponent("desktop6"),
     desktop3: makeNodeComponent("desktop3"),
     desktop5: makeNodeComponent("desktop5"),
+    mobilePreletores: makeNodeComponent("mobilePreletores"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

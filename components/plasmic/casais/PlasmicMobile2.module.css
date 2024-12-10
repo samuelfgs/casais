@@ -103,6 +103,11 @@
   text-align: center;
   min-width: 0;
 }
+@media (max-width: 1100px) {
+  .text__f33Tg {
+    font-size: 35px;
+  }
+}
 .text__owkOc {
   position: relative;
   width: 100%;
@@ -111,6 +116,11 @@
   font-size: 40px;
   text-align: center;
   min-width: 0;
+}
+@media (max-width: 1100px) {
+  .text__owkOc {
+    font-size: 35px;
+  }
 }
 .button:global(.__wab_instance) {
   max-width: 100%;

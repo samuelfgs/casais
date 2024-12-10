@@ -48,6 +48,11 @@
   font-size: 50px;
   text-align: center;
 }
+@media (max-width: 1100px) {
+  .text__blU8M {
+    font-size: 35px;
+  }
+}
 .freeBox__dk2Sz {
   display: flex;
   flex-direction: row;
@@ -145,6 +150,11 @@
   text-align: center;
   min-width: 0;
 }
+@media (max-width: 1100px) {
+  .text__aV3Vr {
+    font-size: 20px;
+  }
+}
 .freeBox__mWt8 {
   display: flex;
   flex-direction: column;
@@ -190,4 +200,10 @@
   font-size: 30px;
   text-align: center;
   min-width: 0;
+}
+@media (max-width: 1100px) {
+  .text__wsnIw {
+    padding-top: 0px;
+    font-size: 20px;
+  }
 }

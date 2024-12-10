@@ -294,6 +294,11 @@
           "id": "7It9WrAHne4M",
           "name": "SearchSvgIcon",
           "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__SearchSvg.tsx"
+        },
+        {
+          "id": "dvykUVSLK6Hm",
+          "name": "InstagramIcon",
+          "moduleFilePath": "plasmic/casais/icons/PlasmicIcon__Instagram.tsx"
         }
       ],
       "images": [

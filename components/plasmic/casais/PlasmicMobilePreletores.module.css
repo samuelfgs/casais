@@ -40,6 +40,11 @@
   > img {
   margin-top: 50px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__r6Nv {
+    padding-bottom: 50px;
+  }
+}
 .text__iJNin {
   position: relative;
   width: auto;

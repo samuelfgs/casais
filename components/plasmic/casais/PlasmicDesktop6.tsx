@@ -69,6 +69,7 @@ import sty from "./PlasmicDesktop6.module.css"; // plasmic-import: GuyG08-Cxz2f/
 
 import MarkerIcon from "./icons/PlasmicIcon__Marker"; // plasmic-import: YW6sjaLFknpv/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: h_0_6QYFY5gx/icon
+import InstagramIcon from "./icons/PlasmicIcon__Instagram"; // plasmic-import: dvykUVSLK6Hm/icon
 
 createPlasmicElementProxy;
 
@@ -226,7 +227,7 @@ function PlasmicDesktop6__RenderFunc(props: {
               link={"https://www.instagram.com/hotelmontereal/"}
               showStartIcon={true}
               startIcon={
-                <MarkerIcon
+                <InstagramIcon
                   className={classNames(projectcss.all, sty.svg__prcgw)}
                   role={"img"}
                 />
