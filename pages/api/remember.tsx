@@ -61,7 +61,7 @@ const transporter = nodemailer.createTransport({
 import qrCode from 'qrcode';
 import svg2img from 'svg2img';
 import { renderToBuffer } from '@react-pdf/renderer';
-import { Comprovante } from '@/components/Comprovante';
+// import { Comprovante } from '@/components/Comprovante';
 import { supabase } from '@/components/supabase/supabase';
 
 const generateQRCode = async (text: string) => {
@@ -127,17 +127,18 @@ export const sendEmail = async (body: any) => {
     qrs.push(buf);
   }
 
-  const pdfBuffer = await renderToBuffer(
-    <Comprovante
-      name={name}
-      cpf={cpf}
-      email={email}
-      price={price}
-      svgs={qrs}
-      vip={vip}
-      geral={geral}
-    />
-  );
+  // const pdfBuffer = await renderToBuffer(
+  //   <Comprovante
+  //     name={name}
+  //     cpf={cpf}
+  //     email={email}
+  //     price={price}
+  //     svgs={qrs}
+  //     vip={vip}
+  //     geral={geral}
+  //   />
+  // );
+  const pdfBuffer = undefined;
 
   try {
     const info = await sendMail(email, pdfBuffer);
