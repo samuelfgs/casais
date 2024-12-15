@@ -51,7 +51,7 @@ export default async function handler(
   const inscrito = inscritoData[0];
 
   const { data: paymentData, error: paymentError } = await supabase
-    .from("payments")
+    .from("payments_retiro")
     .upsert({
       user_id: inscrito.id,
       price: process.env.NEXT_PUBLIC_PRICE,
