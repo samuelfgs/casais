@@ -52,20 +52,6 @@
       "cssFilePath": "plasmic/casais/plasmic.module.css",
       "components": [
         {
-          "id": "CQD8Pxr96jbL",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
-          "renderModuleFilePath": "plasmic/casais/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/index.tsx"
-          },
-          "cssFilePath": "plasmic/casais/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/"
-        },
-        {
           "id": "cAXqSs1VbbDV",
           "name": "Desktop1",
           "type": "managed",
@@ -262,6 +248,33 @@
           "cssFilePath": "plasmic/casais/PlasmicMobilePreletores.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "CQD8Pxr96jbL",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        },
+        {
+          "id": "wIkzkfmPeBFp",
+          "name": "Loading",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicLoading.tsx",
+          "importSpec": {
+            "modulePath": "Loading.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicLoading.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -366,6 +379,11 @@
           "id": "BQEOhjYA_yoA",
           "name": "jan.png",
           "filePath": "../public/plasmic/casais/images/janPng.png"
+        },
+        {
+          "id": "HxGRD9keFXWa",
+          "name": "image 7",
+          "filePath": "../public/plasmic/casais/images/image7.gif"
         }
       ],
       "indirect": false,

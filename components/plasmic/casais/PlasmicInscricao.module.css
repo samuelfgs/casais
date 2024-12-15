@@ -277,6 +277,26 @@
   font-size: 30px;
   min-width: 0;
 }
+.freeBox___3CUi6 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+}
+.text__mOknk {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  min-width: 0;
+}
 .freeBox__m1Yx1 {
   display: flex;
   flex-direction: column;
@@ -346,21 +366,33 @@
   font-weight: 600;
   min-width: 0;
 }
-.formItem__iEW:global(.__wab_instance) {
-  position: relative;
+.nome:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
 }
-.formItem__bzlHt:global(.__wab_instance) {
+.nascimento:global(.__wab_instance) {
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
-.formItem__iqlP0:global(.__wab_instance) {
+.email:global(.__wab_instance) {
   position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.doc:global(.__wab_instance) {
+  position: relative;
+  width: 100%;
+  min-width: 0;
 }
 .text___0Noit {
   padding-top: 0px;
   padding-bottom: 0px;
 }
-.formItem__iJkdG:global(.__wab_instance) {
+.telefone:global(.__wab_instance) {
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
 .text__diWhJ {
   padding-top: 0px;
@@ -438,10 +470,16 @@
   font-weight: 600;
   min-width: 0;
 }
-.formItem__q6Wxg:global(.__wab_instance) {
-  position: relative;
+.nome2:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
 }
-.button:global(.__wab_instance) {
+.data2:global(.__wab_instance) {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.signup:global(.__wab_instance) {
   max-width: 100%;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -457,4 +495,13 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+.loading:global(.__wab_instance) {
+  max-width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
 }

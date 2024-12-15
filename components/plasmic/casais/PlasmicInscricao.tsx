@@ -62,6 +62,7 @@ import {
 import FormItem from "../../FormItem"; // plasmic-import: D_-29DFy6get/component
 import Separator from "../../Separator"; // plasmic-import: fpGcqQ82peL5/component
 import Button from "../../Button"; // plasmic-import: MkhwwcjTHS98/component
+import Loading from "../../Loading"; // plasmic-import: wIkzkfmPeBFp/component
 
 import { useScreenVariants as useScreenVariantswbSvjcbuSqcK } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WbSvjcbuSqcK/globalVariant
 
@@ -80,15 +81,29 @@ export type PlasmicInscricao__VariantsArgs = {};
 type VariantPropType = keyof PlasmicInscricao__VariantsArgs;
 export const PlasmicInscricao__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicInscricao__ArgsType = {};
+export type PlasmicInscricao__ArgsType = {
+  onSignup?: () => void;
+  isLoading?: boolean;
+};
 type ArgPropType = keyof PlasmicInscricao__ArgsType;
-export const PlasmicInscricao__ArgProps = new Array<ArgPropType>();
+export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
+  "onSignup",
+  "isLoading"
+);
 
 export type PlasmicInscricao__OverridesType = {
   root?: Flex__<"div">;
   link?: Flex__<"a"> & Partial<LinkProps>;
+  nome?: Flex__<typeof FormItem>;
+  nascimento?: Flex__<typeof FormItem>;
+  email?: Flex__<typeof FormItem>;
+  doc?: Flex__<typeof FormItem>;
+  telefone?: Flex__<typeof FormItem>;
   separator?: Flex__<typeof Separator>;
-  button?: Flex__<typeof Button>;
+  nome2?: Flex__<typeof FormItem>;
+  data2?: Flex__<typeof FormItem>;
+  signup?: Flex__<typeof Button>;
+  loading?: Flex__<typeof Loading>;
 };
 
 export interface DefaultInscricaoProps {}
@@ -113,7 +128,9 @@ function PlasmicInscricao__RenderFunc(props: {
   const args = React.useMemo(
     () =>
       Object.assign(
-        {},
+        {
+          isLoading: false
+        },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
         )
@@ -130,6 +147,66 @@ function PlasmicInscricao__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "nome.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "nascimento.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "email.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "doc.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "telefone.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "nome2.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "data2.textInputValue",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "validation",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantswbSvjcbuSqcK()
@@ -325,6 +402,45 @@ function PlasmicInscricao__RenderFunc(props: {
                 {"Inscri\u00e7\u00e3o"}
               </div>
             </div>
+            {(() => {
+              try {
+                return !!$state.validation;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox___3CUi6)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mOknk
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $state.validation;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              </div>
+            ) : null}
             <div className={classNames(projectcss.all, sty.freeBox__m1Yx1)}>
               <Stack__
                 as={"div"}
@@ -341,21 +457,61 @@ function PlasmicInscricao__RenderFunc(props: {
                   {"Dados do titular"}
                 </div>
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__hNhKl)}
+                  data-plasmic-name={"nome"}
+                  data-plasmic-override={overrides.nome}
+                  className={classNames("__wab_instance", sty.nome)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "nome",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "nome",
+                    "textInputValue"
+                  ])}
                 />
 
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__iEW)}
+                  data-plasmic-name={"nascimento"}
+                  data-plasmic-override={overrides.nascimento}
+                  className={classNames("__wab_instance", sty.nascimento)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "nascimento",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "nascimento",
+                    "textInputValue"
+                  ])}
                 >
                   {"Data de nascimento"}
                 </FormItem>
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__bzlHt)}
+                  data-plasmic-name={"email"}
+                  data-plasmic-override={overrides.email}
+                  className={classNames("__wab_instance", sty.email)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "email",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "email",
+                    "textInputValue"
+                  ])}
                 >
                   {"E-mail"}
                 </FormItem>
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__iqlP0)}
+                  data-plasmic-name={"doc"}
+                  data-plasmic-override={overrides.doc}
+                  className={classNames("__wab_instance", sty.doc)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "doc",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "doc",
+                    "textInputValue"
+                  ])}
                 >
                   <div
                     className={classNames(
@@ -368,7 +524,17 @@ function PlasmicInscricao__RenderFunc(props: {
                   </div>
                 </FormItem>
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__iJkdG)}
+                  data-plasmic-name={"telefone"}
+                  data-plasmic-override={overrides.telefone}
+                  className={classNames("__wab_instance", sty.telefone)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "telefone",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "telefone",
+                    "textInputValue"
+                  ])}
                 >
                   <div
                     className={classNames(
@@ -403,24 +569,130 @@ function PlasmicInscricao__RenderFunc(props: {
                   {"Dados do acompanhante"}
                 </div>
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__hznZl)}
+                  data-plasmic-name={"nome2"}
+                  data-plasmic-override={overrides.nome2}
+                  className={classNames("__wab_instance", sty.nome2)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "nome2",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "nome2",
+                    "textInputValue"
+                  ])}
                 />
 
                 <FormItem
-                  className={classNames("__wab_instance", sty.formItem__q6Wxg)}
+                  data-plasmic-name={"data2"}
+                  data-plasmic-override={overrides.data2}
+                  className={classNames("__wab_instance", sty.data2)}
+                  onTextInputValueChange={generateStateOnChangeProp($state, [
+                    "data2",
+                    "textInputValue"
+                  ])}
+                  textInputValue={generateStateValueProp($state, [
+                    "data2",
+                    "textInputValue"
+                  ])}
                 >
                   {"Data de nascimento"}
                 </FormItem>
               </Stack__>
               <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
+                data-plasmic-name={"signup"}
+                data-plasmic-override={overrides.signup}
+                className={classNames("__wab_instance", sty.signup)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return $props.onSignup({
+                              nome: $state.nome.textInputValue,
+                              nascimento: $state.nascimento.textInputValue,
+                              email: $state.email.textInputValue,
+                              doc: $state.doc.textInputValue,
+                              telefone: $state.telefone.textInputValue,
+                              nome2: $state.nome2.textInputValue,
+                              nascimento2: $state.data2.textInputValue
+                            });
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+
+                  $steps["updateValidation"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["validation"]
+                          },
+                          operation: 0,
+                          value: $steps.runCode
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateValidation"] != null &&
+                    typeof $steps["updateValidation"] === "object" &&
+                    typeof $steps["updateValidation"].then === "function"
+                  ) {
+                    $steps["updateValidation"] = await $steps[
+                      "updateValidation"
+                    ];
+                  }
+                }}
               >
                 {"Confirmar"}
               </Button>
             </div>
           </Stack__>
+          {(() => {
+            try {
+              return $props.isLoading;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <Loading
+              data-plasmic-name={"loading"}
+              data-plasmic-override={overrides.loading}
+              className={classNames("__wab_instance", sty.loading)}
+            />
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -428,10 +700,31 @@ function PlasmicInscricao__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "link", "separator", "button"],
+  root: [
+    "root",
+    "link",
+    "nome",
+    "nascimento",
+    "email",
+    "doc",
+    "telefone",
+    "separator",
+    "nome2",
+    "data2",
+    "signup",
+    "loading"
+  ],
   link: ["link"],
+  nome: ["nome"],
+  nascimento: ["nascimento"],
+  email: ["email"],
+  doc: ["doc"],
+  telefone: ["telefone"],
   separator: ["separator"],
-  button: ["button"]
+  nome2: ["nome2"],
+  data2: ["data2"],
+  signup: ["signup"],
+  loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -439,8 +732,16 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   link: "a";
+  nome: typeof FormItem;
+  nascimento: typeof FormItem;
+  email: typeof FormItem;
+  doc: typeof FormItem;
+  telefone: typeof FormItem;
   separator: typeof Separator;
-  button: typeof Button;
+  nome2: typeof FormItem;
+  data2: typeof FormItem;
+  signup: typeof Button;
+  loading: typeof Loading;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -504,8 +805,16 @@ export const PlasmicInscricao = Object.assign(
   {
     // Helper components rendering sub-elements
     link: makeNodeComponent("link"),
+    nome: makeNodeComponent("nome"),
+    nascimento: makeNodeComponent("nascimento"),
+    email: makeNodeComponent("email"),
+    doc: makeNodeComponent("doc"),
+    telefone: makeNodeComponent("telefone"),
     separator: makeNodeComponent("separator"),
-    button: makeNodeComponent("button"),
+    nome2: makeNodeComponent("nome2"),
+    data2: makeNodeComponent("data2"),
+    signup: makeNodeComponent("signup"),
+    loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicInscricao
     internalVariantProps: PlasmicInscricao__VariantProps,

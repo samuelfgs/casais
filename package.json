@@ -9,13 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@plasmicapp/cli": "^0.1.334",
     "@plasmicapp/react-web": "^0.2.356",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.230",
-    "@plasmicpkgs/plasmic-embed-css": "^0.1.192",
+    "@plasmicpkgs/plasmic-embed-css": "^0.1.193",
+    "@react-email/html": "^0.0.11",
+    "@react-email/img": "^0.0.11",
+    "@react-email/text": "^0.0.11",
+    "@react-pdf/renderer": "^4.1.5",
+    "@supabase/supabase-js": "^2.47.7",
+    "@types/nodemailer": "^6.4.17",
+    "@types/qrcode": "^1.5.5",
+    "email-validator": "^2.0.4",
+    "mercadopago": "^2.1.0",
+    "nanoid": "^5.0.9",
     "next": "14.2.20",
+    "nodemailer": "^6.9.16",
+    "qrcode": "^1.5.4",
+    "qrcode.react": "^4.2.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "svg2img": "^1.0.0-beta.2"
   },
   "devDependencies": {
     "@types/node": "^20",
