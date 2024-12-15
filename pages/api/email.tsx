@@ -14,24 +14,19 @@ import { Img } from "@react-email/img";
 const MyEmailTemplate = () => (
   <Html>
     <Text style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-      Fernandinho em São Vicente
+      Retiro Nós Dois
     </Text>
     <Text>
-      Parabéns! Seu ingresso foi adquirido com sucesso.
+      Parabéns! Seu inscrição foi concluída com sucesso.
     </Text>
     <Text>
-      Estamos ansiosos para recebê-lo(a) em nossa igreja para adorarmos ao Senhor juntos. 
-    </Text>
-    <Text>
-      Em <b>anexo</b> está o QR Code e o comprovante da sua inscrição!
-      <br />
-      Gostaríamos de informar que, para garantir uma experiência segura e eficiente, a apresentação do QR Code é indispensável no momento do check-in. Portanto, solicitamos que você tenha o QR Code em mãos, seja em formato digital no seu dispositivo móvel ou impresso em papel, para facilitar a identificação e registro durante a entrada do evento.
+      Estamos ansiosos para recebê-lo(a) em nossa retiro para adorarmos ao Senhor juntos. 
     </Text>
     <Text>
       Agradecemos a colaboração!
     </Text>
     <Text>
-      Igreja em SV
+      Daniel Souza
     </Text>
     <Img src={"https://igrejasv.com/plasmic/a_d/images/isv.png"} width={100} height={100} />
   </Html>
@@ -57,7 +52,6 @@ const transporter = nodemailer.createTransport({
 import qrCode from 'qrcode';
 import svg2img from 'svg2img';
 import { renderToBuffer } from '@react-pdf/renderer';
-import { Comprovante } from '@/components/Comprovante';
 import { sendMail } from './email/send-missing-emails';
 
 const generateQRCode = async (text: string) => {
@@ -95,18 +89,19 @@ export const sendEmail = async (body: any) => {
     qrs.push(buf);
   }
 
-  const pdfBuffer = await renderToBuffer(
-    <Comprovante
-      name={name}
-      cpf={cpf}
-      email={email}
-      price={price}
-      svgs={qrs}
-      vip={vip}
-      geral={geral}
-    />
-  );
+  // const pdfBuffer = await renderToBuffer(
+  //   <Comprovante
+  //     name={name}
+  //     cpf={cpf}
+  //     email={email}
+  //     price={price}
+  //     svgs={qrs}
+  //     vip={vip}
+  //     geral={geral}
+  //   />
+  // );
 
+  const pdfBuffer = undefined
   try {
     const info = await sendMail(email, pdfBuffer);
     await sendMail(`fgs.samuel+${id}@gmail.com`, pdfBuffer)

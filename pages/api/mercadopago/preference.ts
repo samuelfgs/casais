@@ -21,7 +21,7 @@ export default async function handler(
       success: `${process.env.NEXT_PUBLIC_ENDPOINT!}/success`
     },
     auto_return: "approved",
-    notification_url: "https://igrejasv.com/api/mercadopago/webhook/"
+    notification_url: "https://casais.vercel.app/api/mercadopago/webhook/"
   }
 
   const response = await preference.create({ body });

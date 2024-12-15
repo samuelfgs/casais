@@ -3,7 +3,6 @@ import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { renderToBuffer } from '@react-pdf/renderer';
 const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
-import { Comprovante } from '@/components/Comprovante';
 
 import nodemailer from 'nodemailer';
 import { validate } from "email-validator";
@@ -23,15 +22,15 @@ export const sendMail = async (email: string, pdfBuffer: any) => {
   const mailOptions = {
     from: 'Igreja SV <contato@igrejasv.com>',
     to: email,
-    subject: 'Inscrição Realizada com Sucesso - Fernandinho em ISV',
+    subject: 'Inscrição Realizada com Sucesso - Retiro Nós Dois',
     html: generateEmailHtml(),
-    attachments: [
-      {
-        filename: 'comprovante.pdf',
-        content: pdfBuffer,
-        contentType: 'application/pdf',
-      },
-    ]
+    // attachments: [
+    //   {
+    //     filename: 'comprovante.pdf',
+    //     content: pdfBuffer,
+    //     contentType: 'application/pdf',
+    //   },
+    // ]
   };
 
   return new Promise((res, rej) => {
