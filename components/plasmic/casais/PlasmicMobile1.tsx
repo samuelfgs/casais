@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { useScreenVariants as useScreenVariantswbSvjcbuSqcK } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WbSvjcbuSqcK/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: sAm7j9mZDvyUmEcguggAEZ/projectcss
@@ -120,6 +122,10 @@ function PlasmicMobile1__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantswbSvjcbuSqcK()
+  });
 
   return (
     <Stack__
@@ -210,7 +216,9 @@ function PlasmicMobile1__RenderFunc(props: {
               sty.text__o7QvK
             )}
           >
-            {"13 \u00e0 15 de dezembro"}
+            {hasVariant(globalVariants, "screen", "tablet")
+              ? "05 \u00e0 07 de dezembro"
+              : "13 \u00e0 15 de dezembro"}
           </div>
         </Stack__>
       </Stack__>
