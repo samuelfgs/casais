@@ -144,20 +144,6 @@
           "componentType": "component"
         },
         {
-          "id": "Sg4ECxtshw6E",
-          "name": "Inscricao",
-          "type": "managed",
-          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
-          "renderModuleFilePath": "plasmic/casais/PlasmicInscricao.tsx",
-          "importSpec": {
-            "modulePath": "../pages/inscricao.tsx"
-          },
-          "cssFilePath": "plasmic/casais/PlasmicInscricao.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "path": "/inscricao"
-        },
-        {
           "id": "LvzZwu2COXKn",
           "name": "TextInput",
           "type": "managed",
@@ -289,6 +275,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/success"
+        },
+        {
+          "id": "Sg4ECxtshw6E",
+          "name": "InscricaoComp",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicInscricaoComp.tsx",
+          "importSpec": {
+            "modulePath": "InscricaoComp.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicInscricaoComp.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
