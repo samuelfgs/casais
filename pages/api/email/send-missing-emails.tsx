@@ -18,12 +18,12 @@ export const transporter = nodemailer.createTransport({
   }
 });
 
-export const sendMail = async (email: string, pdfBuffer: any) => {
+export const sendMail = async (email: string, inscritos: string, pdfBuffer: any) => {
   const mailOptions = {
     from: 'Igreja SV <contato@igrejasv.com>',
     to: email,
-    subject: 'Inscrição Realizada com Sucesso - Retiro Nós Dois',
-    html: generateEmailHtml(),
+    subject: 'Retiro Nós Dois - Inscrição Realizada com Sucesso',
+    html: generateEmailHtml(inscritos),
     // attachments: [
     //   {
     //     filename: 'comprovante.pdf',

@@ -76,7 +76,8 @@ export default async function handler(
 
   try {
     const email = await sendEmail({
-      name: inscrito.name,
+      name: inscrito.nome,
+      name2: inscrito.nome2,
       cpf: inscrito.doc,
       email: inscrito.email,
       price: process.env.NEXT_PUBLIC_PRICE,

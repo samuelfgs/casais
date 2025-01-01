@@ -208,7 +208,7 @@ function PlasmicDesktop1__RenderFunc(props: {
               sty.text__hWNp
             )}
           >
-            {"o5 \u00e0 17 de dezembro"}
+            {"o5 \u00e0 07 de dezembro"}
           </div>
         </Stack__>
       </div>

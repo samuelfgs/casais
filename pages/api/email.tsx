@@ -11,16 +11,18 @@ import { Html } from '@react-email/html';
 import { Text } from '@react-email/text';
 import { Img } from "@react-email/img";
 
-const MyEmailTemplate = () => (
+const MyEmailTemplate = ({
+  inscritos
+}: any) => (
   <Html>
     <Text style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
       Retiro Nós Dois
     </Text>
     <Text>
-      Parabéns! Seu inscrição foi concluída com sucesso.
+      Parabéns! {inscritos} sua inscrição foi realizada com sucesso.
     </Text>
     <Text>
-      Estamos ansiosos para recebê-lo(a) em nossa retiro para adorarmos ao Senhor juntos. 
+      Estamos ansiosos para recebê-lo em nossa retiro para adorarmos ao Senhor juntos. 
     </Text>
     <Text>
       Agradecemos a colaboração!
@@ -28,12 +30,12 @@ const MyEmailTemplate = () => (
     <Text>
       Daniel Souza
     </Text>
-    <Img src={"https://igrejasv.com/plasmic/a_d/images/isv.png"} width={100} height={100} />
+    <Img src={"https://casais.vercel.app/plasmic/casais/images/logo3.png"} width={100} height={100} />
   </Html>
 );
 
-export const generateEmailHtml = () => {
-  const html = ReactDOMServer.renderToStaticMarkup(<MyEmailTemplate /> as any);
+export const generateEmailHtml = (inscritos: string) => {
+  const html = ReactDOMServer.renderToStaticMarkup(<MyEmailTemplate inscritos={inscritos} /> as any);
   return `<!DOCTYPE html>${html}`;
 };
 
@@ -51,7 +53,6 @@ const transporter = nodemailer.createTransport({
 
 import qrCode from 'qrcode';
 import svg2img from 'svg2img';
-import { renderToBuffer } from '@react-pdf/renderer';
 import { sendMail } from './email/send-missing-emails';
 
 const generateQRCode = async (text: string) => {
@@ -81,7 +82,7 @@ export const generateQRCodeSvg = async (id: string) => {
 
 
 export const sendEmail = async (body: any) => {
-  const { name, cpf, email, price, vip, geral, id } = body;
+  const { nome, nome2, cpf, email, price, vip, geral, id } = body;
   const qrs: any[] = [];
   for (let i = 0; i < geral + vip; i++) {
     const svg = await generateQRCodeSvg(`https://igrejasv.com/ingresso/${id}/${i}`);
@@ -101,10 +102,12 @@ export const sendEmail = async (body: any) => {
   //   />
   // );
 
+  const inscritos = `${nome} e ${nome2}`
   const pdfBuffer = undefined
   try {
-    const info = await sendMail(email, pdfBuffer);
-    await sendMail(`fgs.samuel+${id}@gmail.com`, pdfBuffer)
+    const info = await sendMail(email, inscritos, pdfBuffer);
+    await sendMail(`proeserfrutos@gmail.com`, inscritos, pdfBuffer)
+    await sendMail(`fgs.samuel+${id}@gmail.com`, inscritos, pdfBuffer)
     return info;
   } catch (err) {
     throw (err);
