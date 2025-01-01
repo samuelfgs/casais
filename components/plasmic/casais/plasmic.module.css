@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Dancing+Script%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Montserrat%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Catamaran%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Indie+Flower%3Aital%2Cwght%400%2C400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Dancing+Script%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Montserrat%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Catamaran%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
 
 .plasmic_tokens {
   --token-PHluQy5DcTDt: #efe7dd;
@@ -120,7 +120,7 @@
   --mixin-SiNjbWUQccQm_align-items: stretch;
   --mixin-SiNjbWUQccQm_justify-content: flex-start;
   --mixin-SiNjbWUQccQm_list-style-position: outside;
-  --mixin-SiNjbWUQccQm_padding-left: 40px;
+  --mixin-SiNjbWUQccQm_padding-left: 30px;
   --mixin-SiNjbWUQccQm_position: relative;
   --mixin-SiNjbWUQccQm_list-style-type: disc;
   --mixin-SiNjbWUQccQm_white-space: pre-wrap;

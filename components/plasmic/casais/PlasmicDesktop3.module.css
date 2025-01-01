@@ -4,9 +4,10 @@
   position: relative;
   width: 100%;
   height: auto;
-  background: var(--token-d1wM30iB6qjM);
   padding-top: 42px;
   padding-bottom: 60px;
+  overflow: visible;
+  background: #fdebd5;
   min-width: 0;
 }
 .root > :global(.__wab_flex-container) {
@@ -34,11 +35,11 @@
 .freeBox__ya28 {
   display: flex;
   flex-direction: row;
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   align-self: auto;
+  position: relative;
   min-width: 0;
   padding: 8px;
 }

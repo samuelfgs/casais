@@ -42,16 +42,15 @@
     display: flex;
   }
 }
-.mobile2:global(.__wab_instance) {
+.mobilePreletores:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
-  height: 852px;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   display: none;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .mobile2:global(.__wab_instance) {
+  .mobilePreletores:global(.__wab_instance) {
     display: flex;
   }
 }
@@ -70,9 +69,10 @@
 .desktop2:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
+  min-height: 0;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .desktop2:global(.__wab_instance) {
@@ -104,38 +104,21 @@
     display: none;
   }
 }
-.desktop5:global(.__wab_instance) {
-  max-width: 100%;
+.freeBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   width: 100%;
-  height: 800px;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
+  padding: 0px;
 }
-@media (max-width: 1100px) {
-  .desktop5:global(.__wab_instance) {
-    height: auto;
-    display: flex;
-  }
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .desktop5:global(.__wab_instance) {
-    display: none;
-  }
-}
-.mobilePreletores:global(.__wab_instance) {
+.inscricao:global(.__wab_instance) {
   max-width: 100%;
   width: 100%;
-  grid-column-start: 1 !important;
-  grid-column-end: -1 !important;
-  display: none;
-}
-@media (max-width: 1100px) {
-  .mobilePreletores:global(.__wab_instance) {
-    display: none;
-  }
-}
-@media (min-width: 0px) and (max-width: 768px) {
-  .mobilePreletores:global(.__wab_instance) {
-    display: flex;
-  }
+  min-width: 0;
 }

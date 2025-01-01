@@ -154,7 +154,7 @@
           },
           "cssFilePath": "plasmic/casais/PlasmicInscricao.module.css",
           "scheme": "blackbox",
-          "componentType": "page",
+          "componentType": "component",
           "path": "/inscricao"
         },
         {
@@ -256,7 +256,7 @@
           "projectId": "sAm7j9mZDvyUmEcguggAEZ",
           "renderModuleFilePath": "plasmic/casais/PlasmicHomepage.tsx",
           "importSpec": {
-            "modulePath": "../pages/index.tsx"
+            "modulePath": "../pages/inscricao.tsx"
           },
           "cssFilePath": "plasmic/casais/PlasmicHomepage.module.css",
           "scheme": "blackbox",
@@ -275,6 +275,20 @@
           "cssFilePath": "plasmic/casais/PlasmicLoading.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "UX-NN8BUpfNj",
+          "name": "Success",
+          "type": "managed",
+          "projectId": "sAm7j9mZDvyUmEcguggAEZ",
+          "renderModuleFilePath": "plasmic/casais/PlasmicSuccess.tsx",
+          "importSpec": {
+            "modulePath": "../pages/success.tsx"
+          },
+          "cssFilePath": "plasmic/casais/PlasmicSuccess.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/success"
         }
       ],
       "icons": [
@@ -384,6 +398,11 @@
           "id": "HxGRD9keFXWa",
           "name": "image 7",
           "filePath": "../public/plasmic/casais/images/image7.gif"
+        },
+        {
+          "id": "o74zC8z3uPhI",
+          "name": "asaph.jpg",
+          "filePath": "../public/plasmic/casais/images/asaphJpg.jpg"
         }
       ],
       "indirect": false,

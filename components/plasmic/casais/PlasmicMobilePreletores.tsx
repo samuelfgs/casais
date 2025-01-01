@@ -215,12 +215,21 @@ function PlasmicMobilePreletores__RenderFunc(props: {
               displayMinWidth={"0"}
               displayWidth={"80%"}
               loading={"lazy"}
-              src={{
-                src: "/plasmic/casais/images/janPng.png",
-                fullWidth: 1217,
-                fullHeight: 1230,
-                aspectRatio: undefined
-              }}
+              src={
+                hasVariant(globalVariants, "screen", "tablet")
+                  ? {
+                      src: "/plasmic/casais/images/asaphJpg.jpg",
+                      fullWidth: 1080,
+                      fullHeight: 1139,
+                      aspectRatio: undefined
+                    }
+                  : {
+                      src: "/plasmic/casais/images/janPng.png",
+                      fullWidth: 1217,
+                      fullHeight: 1230,
+                      aspectRatio: undefined
+                    }
+              }
               style={
                 hasVariant(globalVariants, "screen", "mobileOnly")
                   ? { width: "80%", aspectRatio: 1 }
@@ -235,7 +244,7 @@ function PlasmicMobilePreletores__RenderFunc(props: {
                 sty.text__kJzTw
               )}
             >
-              {"Jan e Martha Gottfridsson"}
+              {"Asaph e Rosana Borba"}
             </div>
           </Stack__>
         </Stack__>

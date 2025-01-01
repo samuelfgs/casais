@@ -4,97 +4,26 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../components/plasmic/casais/PlasmicGlobalContextsProvider";
 
-import { PlasmicInscricao } from "../components/plasmic/casais/PlasmicInscricao";
+import { PlasmicHomepage } from "../components/plasmic/casais/PlasmicHomepage";
 import { useRouter } from "next/router";
-import { nanoid } from "nanoid";
-import { supabase } from "@/components/supabase/supabase";
 
-function Inscricao() {
-  const router = useRouter();
-
-  const [isLoading, setIsLoading] = React.useState(false);
-
-  const handleSignup = async (dados: {
-    nome: string,
-    nascimento: string,
-    email: string,
-    doc: string,
-    telefone: string,
-    nome2: string,
-    nascimento2: string,
-  }) => {
-    if (isLoading) return "";
-    if (!dados.nome) {
-      return "Por favor preencha o campo nome";
-    }
-    if (!dados.nascimento) {
-      return "Por favor preencha o campo data de nascimento";
-    }
-    if (!dados.email) {
-      return "Por favor preencha o campo email";
-    }
-    if (!dados.doc) {
-      return "Por favor preencha o campo documento de identidade";
-    }
-    if (!dados.telefone) {
-      return "Por favor preencha o campo telefone";
-    }
-    if (!dados.nome2) {
-      return "Por favor preencha o campo nome do acompanhante";
-    }
-    if (!dados.nascimento2) {
-      return "Por favor preencha o campo data de nascimento do acompanhante";
-    }
-
-    setIsLoading(true);
-    const mercadoPagoId = nanoid();
-
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_ENDPOINT}/api/mercadopago/preference`,
-      {
-        method: "POST",
-        body: JSON.stringify({
-          name: dados.nome,
-          email: dados.email,
-          id: mercadoPagoId,
-          items: [
-            {
-              id: 0,
-              title: "Retiro Nós Dois - Inscrição",
-              description:
-                "Ingressos Pista VIP para o Fernandinho em ISV - 06 de outubro",
-              quantity: 1,
-              currency_id: "BRL",
-              unit_price: +(process.env.NEXT_PUBLIC_PRICE ?? -1),
-            },
-          ]
-        }),
-      }
-    );
-
-    const responseJson = await response.json();
-
-    const newRow = await supabase
-      .from("retiro")
-      .insert({
-        nome: dados.nome,
-        nascimento: dados.nascimento,
-        email: dados.email,
-        doc: dados.doc,
-        telefone: dados.telefone,
-        nome2: dados.nome2,
-        nascimento2: dados.nascimento2,
-        mercadoPagoId,
-      })
-      .select();
-
-    if (newRow.error || newRow.data.length !== 1) {
-      throw new Error(newRow.error?.message ?? "Unknown error");
-    }
-
-    router.push(responseJson.response.init_point);
-    return "";
-  }
+function Homepage() {
+  // Use PlasmicHomepage to render this component as it was
+  // designed in Plasmic, by activating the appropriate variants,
+  // attaching the appropriate event handlers, etc.  You
+  // can also install whatever React hooks you need here to manage state or
+  // fetch data.
+  //
+  // Props you can pass into PlasmicHomepage are:
+  // 1. Variants you want to activate,
+  // 2. Contents for slots you want to fill,
+  // 3. Overrides for any named node in the component to attach behavior and data,
+  // 4. Props to set on the root node.
+  //
+  // By default, PlasmicHomepage is wrapped by your project's global
+  // variant context providers. These wrappers may be moved to
+  // Next.js Custom App component
+  // (https://nextjs.org/docs/advanced-features/custom-app).
   return (
     <GlobalContextsProvider>
       <PageParamsProvider__
@@ -102,13 +31,10 @@ function Inscricao() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicInscricao 
-          onSignup={handleSignup as any}   
-          isLoading={isLoading}     
-        />
+        <PlasmicHomepage />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default Inscricao;
+export default Homepage;

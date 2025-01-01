@@ -188,7 +188,7 @@ function PlasmicDesktop3__RenderFunc(props: {
             )}
           >
             {
-              "Nosso retiro ser\u00e1 realizado no Hotel Monte Real, em \u00c1guas de Lind\u00f3ia / S\u00e3o Paulo. \nO hotel se destaca n\u00e3o apenas por sua rica hist\u00f3ria, mas tamb\u00e9m por sua localiza\u00e7\u00e3o privilegiada, situado na jun\u00e7\u00e3o das avenidas Borges de Medeiros e das Hort\u00eansias. Isso proporciona aos participantes do Retiro f\u00e1cil acesso ao cora\u00e7\u00e3o da cidade, a poucos passos das principais atra\u00e7\u00f5es de Gramado, tornando-o um local ideal para aproveitar ao m\u00e1ximo tanto a cidade quanto o Retiro."
+              "Nosso retiro ser\u00e1 realizado no Hotel Monte Real, em \u00c1guas de Lind\u00f3ia / S\u00e3o Paulo. \nLocalizado na deslumbrante Est\u00e2ncia Hidromineral de \u00c1guas de Lind\u00f3ia, a apenas duas horas de S\u00e3o Paulo e em frente \u00e0 Pra\u00e7a projetada por Burle Marx, o Hotel Monte Real \u00e9 um ref\u00fagio de eleg\u00e2ncia e conforto em uma regi\u00e3o montanhosa de grande beleza. Com uma infraestrutura completa voltada para lazer, divers\u00e3o, tranquilidade e bem-estar, oferecemos uma gama de acomoda\u00e7\u00f5es que se adaptam a todas as suas necessidades."
             }
           </div>
           <Stack__

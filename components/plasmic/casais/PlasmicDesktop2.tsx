@@ -61,6 +61,8 @@ import {
 
 import Button from "../../Button"; // plasmic-import: MkhwwcjTHS98/component
 
+import { useScreenVariants as useScreenVariantswbSvjcbuSqcK } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: WbSvjcbuSqcK/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: sAm7j9mZDvyUmEcguggAEZ/projectcss
@@ -128,6 +130,10 @@ function PlasmicDesktop2__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantswbSvjcbuSqcK()
+  });
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -179,12 +185,53 @@ function PlasmicDesktop2__RenderFunc(props: {
               {"Feito para casais"}
             </div>
           </div>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__a4DpH)}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__lReX)}
+              displayHeight={"400px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? "80%"
+                  : "400px"
+              }
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/casais/images/daniel.png",
+                fullWidth: 1290,
+                fullHeight: 1052,
+                aspectRatio: undefined
+              }}
+              style={
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? { aspectRatio: 1, width: "80%" }
+                  : undefined
+              }
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__nF30P
+              )}
+            >
+              {"Daniel e Selma Souza"}
+            </div>
+          </Stack__>
           <Button
             data-plasmic-name={"button"}
             data-plasmic-override={overrides.button}
             className={classNames("__wab_instance", sty.button)}
             color={"softSand"}
-            link={`/inscricao`}
             shape={"rounded"}
           >
             <div
@@ -220,9 +267,56 @@ function PlasmicDesktop2__RenderFunc(props: {
             )}
           >
             {
-              "Voc\u00ea e seu c\u00f4njuge est\u00e3o convidados para um retiro especial, onde a f\u00e9 e o amor se encontram em um ambiente acolhedor e inspirador. Este \u00e9 um momento \u00fanico para se desconectar da rotina di\u00e1ria e se reconectar com Deus e com o seu amor. Durante o retiro, teremos din\u00e2micas interativas, momentos de reflex\u00e3o e ensinamentos que fortalecer\u00e3o os la\u00e7os entre voc\u00eas.\n\nJunte-se a n\u00f3s para um final de semana repleto de aprendizado, ora\u00e7\u00e3o e crescimento m\u00fatuo. Ser\u00e1 uma oportunidade de compartilhar experi\u00eancias com outros casais, renovar seus votos e redescobrir a beleza da uni\u00e3o sob a luz da f\u00e9. N\u00e3o perca a chance de viver essa experi\u00eancia transformadora e cheia de b\u00ean\u00e7\u00e3os. "
+              "Voc\u00ea e seu c\u00f4njuge est\u00e3o convidados para um retiro especial, onde a f\u00e9 e o amor se encontram em um ambiente acolhedor e inspirador. Este \u00e9 um momento \u00fanico para se desconectar da rotina di\u00e1ria e se reconectar com Deus e com o seu amor. Durante o retiro, teremos din\u00e2micas interativas, momentos de reflex\u00e3o e ensinamentos que fortalecer\u00e3o os la\u00e7os entre voc\u00eas."
             }
           </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__oirPp
+            )}
+          >
+            {"Convidados"}
+          </div>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__tvr8J)}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__kefj)}
+              displayHeight={"300px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"300px"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/casais/images/asaphJpg.jpg",
+                fullWidth: 1080,
+                fullHeight: 1139,
+                aspectRatio: undefined
+              }}
+              style={
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? { width: "80%", aspectRatio: 1 }
+                  : undefined
+              }
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ozBx8
+              )}
+            >
+              {"Asaph e Rosana Borba"}
+            </div>
+          </Stack__>
         </Stack__>
       </div>
     </div>

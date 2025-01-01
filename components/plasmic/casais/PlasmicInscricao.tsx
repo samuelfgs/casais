@@ -93,7 +93,6 @@ export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicInscricao__OverridesType = {
   root?: Flex__<"div">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
   nome?: Flex__<typeof FormItem>;
   nascimento?: Flex__<typeof FormItem>;
   email?: Flex__<typeof FormItem>;
@@ -106,7 +105,11 @@ export type PlasmicInscricao__OverridesType = {
   loading?: Flex__<typeof Loading>;
 };
 
-export interface DefaultInscricaoProps {}
+export interface DefaultInscricaoProps {
+  onSignup?: () => void;
+  isLoading?: boolean;
+  className?: string;
+}
 
 const $$ = {};
 
@@ -213,496 +216,732 @@ function PlasmicInscricao__RenderFunc(props: {
   });
 
   return (
-    <React.Fragment>
-      <Head></Head>
-
-      <style>{`
-        body {
-          margin: 0;
-        }
-      `}</style>
-
-      <div className={projectcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            sty.root
-          )}
-        >
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
+    >
+      <Stack__
+        as={"div"}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.freeBox___0FfHu)}
+      >
+        <div className={classNames(projectcss.all, sty.freeBox__x0THa)}>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__fK8F
+            )}
+          >
+            {"Inscri\u00e7\u00e3o"}
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__nv9YT)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___1I4U
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Valores e prazos:"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul__fnEh0
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__h9QAb
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 1: R$ 2.476,00 (01/01/25 at\u00e9 31/03/25) "
+                          : "Lote 1: R$ 2.476,00 (01/01/25 at\u00e9 31/03/25) "}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul___3Bl3C
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__b40R
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 2: R$ 2.625,00 (01/04/24 at\u00e9 31/07/25)"
+                          : "Lote 2: R$ 2.625,00 (01/04/24 at\u00e9 31/07/25)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul___4IvZa
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__m2Efp
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 3: R$ 2.783,00 (01/08/25 at\u00e9 30/11/25)"
+                          : "Lote 3: R$ 2.783,00 (01/08/25 at\u00e9 30/11/25)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Promo\u00e7\u00e3o:"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul__wQp4
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__mR6
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 1: R$ 2.228,40 (\u00c0 vista)"
+                          : "Lote 1: R$ 2.228,40 (\u00c0 vista)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Acompanhantes:"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul___7KoJz
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__zJtkU
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Crian\u00e7as de 0 a 04 anos: Corteria "
+                          : "Crian\u00e7as de 0 a 04 anos: Corteria "}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul__czYc3
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li___4ITn
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Crian\u00e7as de 05 a 11 anos: R$ 310,00 (Di\u00e1ria)"
+                          : "Crian\u00e7as de 05 a 11 anos: R$ 310,00 (Di\u00e1ria)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Valores e prazos:"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul__fnEh0
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__h9QAb
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 1: R$ 2.476,00 (01/01/25 at\u00e9 31/03/25) "
+                          : "Lote 1: R$ 2.476,00 (01/01/25 at\u00e9 31/03/25) "}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul___3Bl3C
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__b40R
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 2: R$ 2.625,00 (01/04/24 at\u00e9 31/07/25)"
+                          : "Lote 2: R$ 2.625,00 (01/04/24 at\u00e9 31/07/25)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul___4IvZa
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__m2Efp
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 3: R$ 2.783,00 (01/08/25 at\u00e9 30/11/25)"
+                          : "Lote 3: R$ 2.783,00 (01/08/25 at\u00e9 30/11/25)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Promo\u00e7\u00e3o:"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul__wQp4
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__mR6
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Lote 1: R$ 2.228,40 (\u00c0 vista)"
+                          : "Lote 1: R$ 2.228,40 (\u00c0 vista)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Acompanhantes:"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul___7KoJz
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__zJtkU
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Crian\u00e7as de 0 a 04 anos: Corteria "
+                          : "Crian\u00e7as de 0 a 04 anos: Corteria "}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <ul
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul__czYc3
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li___4ITn
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Crian\u00e7as de 05 a 11 anos: R$ 310,00 (Di\u00e1ria)"
+                          : "Crian\u00e7as de 05 a 11 anos: R$ 310,00 (Di\u00e1ria)"}
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              )}
+            </div>
+          </div>
+        </div>
+        {(() => {
+          try {
+            return !!$state.validation;
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return true;
+            }
+            throw e;
+          }
+        })() ? (
+          <div className={classNames(projectcss.all, sty.freeBox___3CUi6)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__mOknk
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $state.validation;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+          </div>
+        ) : null}
+        <div className={classNames(projectcss.all, sty.freeBox__m1Yx1)}>
           <Stack__
             as={"div"}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox___0FfHu)}
+            className={classNames(projectcss.all, sty.freeBox__wSjot)}
           >
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__kTyP)}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__eorOd
+              )}
             >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__tIsZ)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "50px"
-                    : "75px"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/casais/images/logo3.png",
-                  fullWidth: 414,
-                  fullHeight: 433,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__f0Z8P
-                )}
-              >
-                {"N\u00f3s Dois"}
-              </div>
-            </Stack__>
-            <Stack__
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__as2Ft)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uzNE
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Local do retiro:"}
-                  </span>
-                  <React.Fragment>
-                    {" Hotel Monte Real / \u00c1guas de Lind\u00f3ia - SP"}
-                  </React.Fragment>
-                </React.Fragment>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___0LmD3
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Data: "}
-                  </span>
-                  <React.Fragment>{"13 \u00e0 15 de dezembro"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {" "}
-                  </span>
-                </React.Fragment>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__o1IpO
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Valor: "}
-                  </span>
-                  <React.Fragment>{"R$ 2200,00"}</React.Fragment>
-                </React.Fragment>
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__c8Z6I
-                )}
-              >
-                {"Ficou com alguma d\u00favida?"}
-              </div>
-              <Stack__
-                as={PlasmicLink__}
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                hasGap={true}
-                className={classNames(projectcss.all, projectcss.a, sty.link)}
-                component={Link}
-                href={"https://wa.me/+5513991259404"}
-                platform={"nextjs"}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__pfJFt)}
-                  displayHeight={"50px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"50px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/casais/images/image6.png",
-                    fullWidth: 600,
-                    fullHeight: 383,
-                    aspectRatio: undefined
-                  }}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yahxL
-                  )}
-                >
-                  {"FALE CONOSCO"}
-                </div>
-              </Stack__>
-            </Stack__>
-            <div className={classNames(projectcss.all, sty.freeBox__x0THa)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fK8F
-                )}
-              >
-                {"Inscri\u00e7\u00e3o"}
-              </div>
+              {"Dados do titular"}
             </div>
-            {(() => {
-              try {
-                return !!$state.validation;
-              } catch (e) {
+            <FormItem
+              data-plasmic-name={"nome"}
+              data-plasmic-override={overrides.nome}
+              className={classNames("__wab_instance", sty.nome)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "nome",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
                 if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
                 ) {
-                  return true;
+                  return;
                 }
-                throw e;
-              }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox___3CUi6)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mOknk
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $state.validation;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-              </div>
-            ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__m1Yx1)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__wSjot)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eorOd
-                  )}
-                >
-                  {"Dados do titular"}
-                </div>
-                <FormItem
-                  data-plasmic-name={"nome"}
-                  data-plasmic-override={overrides.nome}
-                  className={classNames("__wab_instance", sty.nome)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "nome",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "nome",
-                    "textInputValue"
-                  ])}
-                />
-
-                <FormItem
-                  data-plasmic-name={"nascimento"}
-                  data-plasmic-override={overrides.nascimento}
-                  className={classNames("__wab_instance", sty.nascimento)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "nascimento",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "nascimento",
-                    "textInputValue"
-                  ])}
-                >
-                  {"Data de nascimento"}
-                </FormItem>
-                <FormItem
-                  data-plasmic-name={"email"}
-                  data-plasmic-override={overrides.email}
-                  className={classNames("__wab_instance", sty.email)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "email",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "email",
-                    "textInputValue"
-                  ])}
-                >
-                  {"E-mail"}
-                </FormItem>
-                <FormItem
-                  data-plasmic-name={"doc"}
-                  data-plasmic-override={overrides.doc}
-                  className={classNames("__wab_instance", sty.doc)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "doc",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "doc",
-                    "textInputValue"
-                  ])}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___0Noit
-                    )}
-                  >
-                    {"Documento de identidade"}
-                  </div>
-                </FormItem>
-                <FormItem
-                  data-plasmic-name={"telefone"}
-                  data-plasmic-override={overrides.telefone}
-                  className={classNames("__wab_instance", sty.telefone)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "telefone",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "telefone",
-                    "textInputValue"
-                  ])}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__diWhJ
-                    )}
-                  >
-                    {"Telefone"}
-                  </div>
-                </FormItem>
-              </Stack__>
-              <div className={classNames(projectcss.all, sty.freeBox___8PHs)}>
-                <Separator
-                  data-plasmic-name={"separator"}
-                  data-plasmic-override={overrides.separator}
-                  className={classNames("__wab_instance", sty.separator)}
-                />
-              </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox___2Gvw)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hfOz
-                  )}
-                >
-                  {"Dados do acompanhante"}
-                </div>
-                <FormItem
-                  data-plasmic-name={"nome2"}
-                  data-plasmic-override={overrides.nome2}
-                  className={classNames("__wab_instance", sty.nome2)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "nome2",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "nome2",
-                    "textInputValue"
-                  ])}
-                />
-
-                <FormItem
-                  data-plasmic-name={"data2"}
-                  data-plasmic-override={overrides.data2}
-                  className={classNames("__wab_instance", sty.data2)}
-                  onTextInputValueChange={generateStateOnChangeProp($state, [
-                    "data2",
-                    "textInputValue"
-                  ])}
-                  textInputValue={generateStateValueProp($state, [
-                    "data2",
-                    "textInputValue"
-                  ])}
-                >
-                  {"Data de nascimento"}
-                </FormItem>
-              </Stack__>
-              <Button
-                data-plasmic-name={"signup"}
-                data-plasmic-override={overrides.signup}
-                className={classNames("__wab_instance", sty.signup)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return $props.onSignup({
-                              nome: $state.nome.textInputValue,
-                              nascimento: $state.nascimento.textInputValue,
-                              email: $state.email.textInputValue,
-                              doc: $state.doc.textInputValue,
-                              telefone: $state.telefone.textInputValue,
-                              nome2: $state.nome2.textInputValue,
-                              nascimento2: $state.data2.textInputValue
-                            });
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
-                  $steps["updateValidation"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["validation"]
-                          },
-                          operation: 0,
-                          value: $steps.runCode
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateValidation"] != null &&
-                    typeof $steps["updateValidation"] === "object" &&
-                    typeof $steps["updateValidation"].then === "function"
-                  ) {
-                    $steps["updateValidation"] = await $steps[
-                      "updateValidation"
-                    ];
-                  }
-                }}
-              >
-                {"Confirmar"}
-              </Button>
-            </div>
-          </Stack__>
-          {(() => {
-            try {
-              return $props.isLoading;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <Loading
-              data-plasmic-name={"loading"}
-              data-plasmic-override={overrides.loading}
-              className={classNames("__wab_instance", sty.loading)}
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "nome",
+                "textInputValue"
+              ])}
             />
-          ) : null}
+
+            <FormItem
+              data-plasmic-name={"nascimento"}
+              data-plasmic-override={overrides.nascimento}
+              className={classNames("__wab_instance", sty.nascimento)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "nascimento",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "nascimento",
+                "textInputValue"
+              ])}
+            >
+              {"Data de nascimento"}
+            </FormItem>
+            <FormItem
+              data-plasmic-name={"email"}
+              data-plasmic-override={overrides.email}
+              className={classNames("__wab_instance", sty.email)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "email",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "email",
+                "textInputValue"
+              ])}
+            >
+              {"E-mail"}
+            </FormItem>
+            <FormItem
+              data-plasmic-name={"doc"}
+              data-plasmic-override={overrides.doc}
+              className={classNames("__wab_instance", sty.doc)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "doc",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "doc",
+                "textInputValue"
+              ])}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___0Noit
+                )}
+              >
+                {"Documento de identidade"}
+              </div>
+            </FormItem>
+            <FormItem
+              data-plasmic-name={"telefone"}
+              data-plasmic-override={overrides.telefone}
+              className={classNames("__wab_instance", sty.telefone)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "telefone",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "telefone",
+                "textInputValue"
+              ])}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__diWhJ
+                )}
+              >
+                {"Telefone"}
+              </div>
+            </FormItem>
+          </Stack__>
+          <div className={classNames(projectcss.all, sty.freeBox___8PHs)}>
+            <Separator
+              data-plasmic-name={"separator"}
+              data-plasmic-override={overrides.separator}
+              className={classNames("__wab_instance", sty.separator)}
+            />
+          </div>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox___2Gvw)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__hfOz
+              )}
+            >
+              {"Dados do acompanhante"}
+            </div>
+            <FormItem
+              data-plasmic-name={"nome2"}
+              data-plasmic-override={overrides.nome2}
+              className={classNames("__wab_instance", sty.nome2)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "nome2",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "nome2",
+                "textInputValue"
+              ])}
+            />
+
+            <FormItem
+              data-plasmic-name={"data2"}
+              data-plasmic-override={overrides.data2}
+              className={classNames("__wab_instance", sty.data2)}
+              onTextInputValueChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "data2",
+                  "textInputValue"
+                ]).apply(null, eventArgs);
+
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              textInputValue={generateStateValueProp($state, [
+                "data2",
+                "textInputValue"
+              ])}
+            >
+              {"Data de nascimento"}
+            </FormItem>
+          </Stack__>
+          <Button
+            data-plasmic-name={"signup"}
+            data-plasmic-override={overrides.signup}
+            className={classNames("__wab_instance", sty.signup)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return $props.onSignup({
+                          nome: $state.nome.textInputValue,
+                          nascimento: $state.nascimento.textInputValue,
+                          email: $state.email.textInputValue,
+                          doc: $state.doc.textInputValue,
+                          telefone: $state.telefone.textInputValue,
+                          nome2: $state.nome2.textInputValue,
+                          nascimento2: $state.data2.textInputValue
+                        });
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["updateValidation"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["validation"]
+                      },
+                      operation: 0,
+                      value: $steps.runCode
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateValidation"] != null &&
+                typeof $steps["updateValidation"] === "object" &&
+                typeof $steps["updateValidation"].then === "function"
+              ) {
+                $steps["updateValidation"] = await $steps["updateValidation"];
+              }
+            }}
+          >
+            {"Confirmar"}
+          </Button>
         </div>
-      </div>
-    </React.Fragment>
+      </Stack__>
+      {(() => {
+        try {
+          return $props.isLoading;
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <Loading
+          data-plasmic-name={"loading"}
+          data-plasmic-override={overrides.loading}
+          className={classNames("__wab_instance", sty.loading)}
+        />
+      ) : null}
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
   root: [
     "root",
-    "link",
     "nome",
     "nascimento",
     "email",
@@ -714,7 +953,6 @@ const PlasmicDescendants = {
     "signup",
     "loading"
   ],
-  link: ["link"],
   nome: ["nome"],
   nascimento: ["nascimento"],
   email: ["email"],
@@ -731,7 +969,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  link: "a";
   nome: typeof FormItem;
   nascimento: typeof FormItem;
   email: typeof FormItem;
@@ -804,7 +1041,6 @@ export const PlasmicInscricao = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    link: makeNodeComponent("link"),
     nome: makeNodeComponent("nome"),
     nascimento: makeNodeComponent("nascimento"),
     email: makeNodeComponent("email"),
@@ -818,15 +1054,7 @@ export const PlasmicInscricao = Object.assign(
 
     // Metadata about props expected for PlasmicInscricao
     internalVariantProps: PlasmicInscricao__VariantProps,
-    internalArgProps: PlasmicInscricao__ArgProps,
-
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    internalArgProps: PlasmicInscricao__ArgProps
   }
 );
 

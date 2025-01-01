@@ -197,10 +197,20 @@ function PlasmicFormItem__RenderFunc(props: {
         data-plasmic-name={"textInput"}
         data-plasmic-override={overrides.textInput}
         className={classNames("__wab_instance", sty.textInput)}
-        onChange={(...eventArgs) => {
-          generateStateOnChangeProp($state, ["textInput", "value"])(
-            (e => e.target?.value).apply(null, eventArgs)
-          );
+        onChange={async (...eventArgs: any) => {
+          ((...eventArgs) => {
+            generateStateOnChangeProp($state, ["textInput", "value"])(
+              (e => e.target?.value).apply(null, eventArgs)
+            );
+          }).apply(null, eventArgs);
+
+          if (
+            eventArgs.length > 1 &&
+            eventArgs[1] &&
+            eventArgs[1]._plasmic_state_init_
+          ) {
+            return;
+          }
         }}
         placeholder={``}
         value={generateStateValueProp($state, ["textInput", "value"]) ?? ""}

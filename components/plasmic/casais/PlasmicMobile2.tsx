@@ -197,7 +197,6 @@ function PlasmicMobile2__RenderFunc(props: {
               ? "softSand"
               : undefined
           }
-          link={`/inscricao`}
           shape={"rounded"}
         >
           <div
