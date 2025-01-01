@@ -65,7 +65,7 @@ function InscricaoComp_(
     setIsLoading(true);
     const mercadoPagoId = nanoid();
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_ENDPOINT}/api/mercadopago/preference`,
+      `/api/mercadopago/preference`,
       {
         method: 'POST',
         body: JSON.stringify({
