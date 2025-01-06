@@ -76,8 +76,7 @@ function InscricaoComp_(
             {
               id: 0,
               title: 'Retiro Nós Dois - Inscrição',
-              description:
-                'Ingressos Pista VIP para o Fernandinho em ISV - 06 de outubro',
+              description: 'Retiro Nós Dois - Inscrição',
               quantity: 1,
               currency_id: 'BRL',
               unit_price: +(process.env.NEXT_PUBLIC_PRICE ?? -1)
